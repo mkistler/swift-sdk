@@ -194,7 +194,7 @@
         <section>
           <section class="section">
             
-            <h2 id='speech-to-text' class='heading'>Speech to Text</h2>
+            <h1 id='speech-to-text' class='heading'>Speech to Text</h1>
 
 <p>The IBM Watson Speech to Text service enables you to add speech transcription capabilities to your application. It uses machine intelligence to combine information about grammar and language structure to generate an accurate transcription. Transcriptions are supported for various audio formats and languages.</p>
 
@@ -203,7 +203,7 @@
 <p>Please be sure to include both <code>SpeechToTextV1.framework</code> and <code>Starscream.framework</code> in your application. Starscream is a recursive dependency that adds support for WebSockets sessions.</p>
 
 <p>Beginning with iOS 10+, any application that accesses the microphone must include the <code>NSMicrophoneUsageDescription</code> key in the app&rsquo;s <code>Info.plist</code> file. Otherwise, the app will crash. Find more information about this <a href="https://forums.developer.apple.com/thread/61521">here</a>.</p>
-<h4 id='recognition-request-settings' class='heading'>Recognition Request Settings</h4>
+<h3 id='recognition-request-settings' class='heading'>Recognition Request Settings</h3>
 
 <p>The <code><a href="Structs/RecognitionSettings.html">RecognitionSettings</a></code> class is used to define the audio format and behavior of a recognition request. These settings are transmitted to the service when <a href="https://console.bluemix.net/docs/services/speech-to-text/websockets.html#WSstart">initating a request</a>.</p>
 
@@ -213,7 +213,7 @@
 </code></pre>
 
 <p>See the <a href="http://watson-developer-cloud.github.io/swift-sdk/services/SpeechToTextV1/Structs/RecognitionSettings.html">class documentation</a> or <a href="https://console.bluemix.net/docs/services/speech-to-text/index.html">service documentation</a> for more information about the available settings.</p>
-<h4 id='microphone-audio-and-compression' class='heading'>Microphone Audio and Compression</h4>
+<h3 id='microphone-audio-and-compression' class='heading'>Microphone Audio and Compression</h3>
 
 <p>The Speech to Text framework makes it easy to perform speech recognition with microphone audio. The framework internally manages the microphone, starting and stopping it with various function calls (such as <code>recognizeMicrophone(settings:model:customizationID:learningOptOut:compress:failure:success)</code> and <code>stopRecognizeMicrophone()</code> or <code>startMicrophone(compress:)</code> and <code>stopMicrophone()</code>).</p>
 
@@ -233,7 +233,7 @@
 <span class="c1">// uncompressed microphone audio uses a 16-bit mono PCM format at 16 kHz</span>
 <span class="k">let</span> <span class="nv">settings</span> <span class="o">=</span> <span class="kt">RecognitionSettings</span><span class="p">(</span><span class="nv">contentType</span><span class="p">:</span> <span class="s">"audio/l16;rate=16000;channels=1"</span><span class="p">)</span>
 </code></pre>
-<h4 id='recognition-results-accumulator' class='heading'>Recognition Results Accumulator</h4>
+<h3 id='recognition-results-accumulator' class='heading'>Recognition Results Accumulator</h3>
 
 <p>The Speech to Text service may not always return the entire transcription in a single response. Instead, the transcription may be streamed over multiple responses, each with a chunk of the overall results. This is especially common for long audio files, since the entire transcription may contain a significant amount of text.</p>
 
@@ -247,7 +247,7 @@
 <span class="n">accumulator</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">results</span><span class="p">:</span> <span class="n">results</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">accumulator</span><span class="o">.</span><span class="n">bestTranscript</span><span class="p">)</span>
 </code></pre>
-<h4 id='transcribe-recorded-audio' class='heading'>Transcribe Recorded Audio</h4>
+<h3 id='transcribe-recorded-audio' class='heading'>Transcribe Recorded Audio</h3>
 
 <p>The following example demonstrates how to use the Speech to Text service to transcribe a WAV audio file.</p>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">SpeechToTextV1</span>
@@ -268,7 +268,7 @@
     <span class="nf">print</span><span class="p">(</span><span class="n">accumulator</span><span class="o">.</span><span class="n">bestTranscript</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre>
-<h4 id='transcribe-microphone-audio' class='heading'>Transcribe Microphone Audio</h4>
+<h3 id='transcribe-microphone-audio' class='heading'>Transcribe Microphone Audio</h3>
 
 <p>Audio can be streamed from the microphone to the Speech to Text service for real-time transcriptions. The following example demonstrates how to use the Speech to Text service to transcribe microphone audio:</p>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">SpeechToTextV1</span>
@@ -293,7 +293,7 @@
     <span class="n">speechToText</span><span class="o">.</span><span class="nf">stopRecognizeMicrophone</span><span class="p">()</span>
 <span class="p">}</span>
 </code></pre>
-<h4 id='session-management-and-advanced-features' class='heading'>Session Management and Advanced Features</h4>
+<h3 id='session-management-and-advanced-features' class='heading'>Session Management and Advanced Features</h3>
 
 <p>Advanced users may want more customizability than provided by the <code><a href="Classes/SpeechToText.html">SpeechToText</a></code> class. The <code><a href="Classes/SpeechToTextSession.html">SpeechToTextSession</a></code> class exposes more control over the WebSockets connection and also includes several advanced features for accessing the microphone. The <code><a href="Classes/SpeechToTextSession.html">SpeechToTextSession</a></code> class also allows users more control over the AVAudioSession shared instance. Before using <code><a href="Classes/SpeechToTextSession.html">SpeechToTextSession</a></code>, it&rsquo;s helpful to be familiar with the <a href="https://console.bluemix.net/docs/services/speech-to-text/websockets.html">Speech to Text WebSocket interface</a>.</p>
 
@@ -367,10 +367,10 @@
     <span class="n">speechToTextSession</span><span class="o">.</span><span class="nf">disconnect</span><span class="p">()</span>
 <span class="p">}</span>
 </code></pre>
-<h4 id='customization' class='heading'>Customization</h4>
+<h3 id='customization' class='heading'>Customization</h3>
 
 <p>There are a number of ways that Speech to Text can be customized to suit your particular application. For example, you can define custom words or upload audio to train an acoustic model. For more information, refer to the <a href="https://console.bluemix.net/docs/services/speech-to-text/index.html">service documentation</a> or <a href="http://watson-developer-cloud.github.io/swift-sdk/swift-api/services/SpeechToTextV1/Classes/SpeechToText.html">API documentation</a>.</p>
-<h4 id='additional-information' class='heading'>Additional Information</h4>
+<h3 id='additional-information' class='heading'>Additional Information</h3>
 
 <p>The following links provide more information about the IBM Speech to Text service:</p>
 

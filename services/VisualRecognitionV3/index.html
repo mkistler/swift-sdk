@@ -119,7 +119,7 @@
         <section>
           <section class="section">
             
-            <h2 id='visual-recognition' class='heading'>Visual Recognition</h2>
+            <h1 id='visual-recognition' class='heading'>Visual Recognition</h1>
 
 <p>The IBM Watson Visual Recognition service uses deep learning algorithms to analyze images (.jpg or .png) for scenes, objects, faces, text, and other content, and return keywords that provide information about that content. The service comes with a set of built-in classes so that you can analyze images with high accuracy right out of the box. You can also train custom classifiers to create specialized classes.</p>
 
@@ -140,7 +140,7 @@
 <p>Note: a different initializer is used for authentication with instances created before May 23, 2018:</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">visualRecognition</span> <span class="o">=</span> <span class="kt">VisualRecognition</span><span class="p">(</span><span class="nv">apiKey</span><span class="p">:</span> <span class="n">apiKey</span><span class="p">,</span> <span class="nv">version</span><span class="p">:</span> <span class="n">version</span><span class="p">)</span>
 </code></pre>
-<h3 id='using-core-ml' class='heading'>Using Core ML</h3>
+<h2 id='using-core-ml' class='heading'>Using Core ML</h2>
 
 <p>The Watson Swift SDK supports offline image classification using Apple Core ML. Classifiers must be trained or updated with the <code>coreMLEnabled</code> flag set to true. Once the classifier&rsquo;s <code>coreMLStatus</code> is <code>ready</code> then a Core ML model is available to download and use for offline classification.</p>
 
@@ -176,7 +176,7 @@
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">classifierID</span> <span class="o">=</span> <span class="s">"your-classifier-id"</span>
 <span class="n">visualRecognition</span><span class="o">.</span><span class="nf">deleteLocalModel</span><span class="p">(</span><span class="nv">classifierID</span><span class="p">:</span> <span class="n">classifierID</span><span class="p">)</span>
 </code></pre>
-<h4 id='bundling-a-model-directly-with-your-application' class='heading'>Bundling a model directly with your application</h4>
+<h3 id='bundling-a-model-directly-with-your-application' class='heading'>Bundling a model directly with your application</h3>
 
 <p>You may also choose to include a Core ML model with your application, enabling images to be classified offline without having to download a model first. To include a model, add it to your application bundle following the naming convention [classifier_id].mlmodel. This will enable the SDK to locate the model when using any function that accepts a classifierID argument.</p>
 

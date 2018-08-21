@@ -347,71 +347,10 @@
         <section>
           <section class="section">
             
-            <h2 id='watson-assistant' class='heading'>Watson Assistant</h2>
+            <h1 id='conversation' class='heading'>Conversation</h1>
+<h2 id='deprecation-notice' class='heading'>Deprecation notice</h2>
 
-<p>With the IBM Watson Assistant service you can create cognitive agents&ndash;virtual agents that combine machine learning, natural language understanding, and integrated dialog scripting tools to provide outstanding customer engagements.</p>
-
-<p>The following example shows how to start a conversation with the Assistant service:</p>
-<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">AssistantV1</span>
-
-<span class="k">let</span> <span class="nv">username</span> <span class="o">=</span> <span class="s">"your-username-here"</span>
-<span class="k">let</span> <span class="nv">password</span> <span class="o">=</span> <span class="s">"your-password-here"</span>
-<span class="k">let</span> <span class="nv">version</span> <span class="o">=</span> <span class="s">"YYYY-MM-DD"</span> <span class="c1">// use today's date for the most recent version</span>
-<span class="k">let</span> <span class="nv">assistant</span> <span class="o">=</span> <span class="kt">Assistant</span><span class="p">(</span><span class="nv">username</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="n">password</span><span class="p">,</span> <span class="nv">version</span><span class="p">:</span> <span class="n">version</span><span class="p">)</span>
-
-<span class="k">let</span> <span class="nv">workspaceID</span> <span class="o">=</span> <span class="s">"your-workspace-id-here"</span>
-<span class="k">let</span> <span class="nv">failure</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">)</span> <span class="k">in</span> <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">}</span>
-<span class="k">var</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">?</span> <span class="c1">// save context to continue conversation</span>
-<span class="n">assistant</span><span class="o">.</span><span class="nf">message</span><span class="p">(</span><span class="nv">workspaceID</span><span class="p">:</span> <span class="n">workspaceID</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="n">failure</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">response</span> <span class="k">in</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-    <span class="n">context</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">context</span>
-<span class="p">}</span>
-</code></pre>
-
-<p>The following example shows how to continue an existing conversation with the Assistant service:</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">input</span> <span class="o">=</span> <span class="kt">InputData</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="s">"Turn on the radio."</span><span class="p">)</span>
-<span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">MessageRequest</span><span class="p">(</span><span class="nv">input</span><span class="p">:</span> <span class="n">input</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="n">context</span><span class="p">)</span>
-<span class="k">let</span> <span class="nv">failure</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">)</span> <span class="k">in</span> <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">}</span>
-<span class="n">assistant</span><span class="o">.</span><span class="nf">message</span><span class="p">(</span><span class="nv">workspaceID</span><span class="p">:</span> <span class="n">workspaceID</span><span class="p">,</span> <span class="nv">request</span><span class="p">:</span> <span class="n">request</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="n">failure</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">response</span> <span class="k">in</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-    <span class="n">context</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">context</span>
-<span class="p">}</span>
-</code></pre>
-<h4 id='context-variables' class='heading'>Context Variables</h4>
-
-<p>The Assistant service allows users to define custom context variables in their application&rsquo;s payload. For example, a workspace that guides users through a pizza order might include a context variable for pizza size: <code>&quot;pizza_size&quot;: &quot;large&quot;</code>.</p>
-
-<p>Context variables are get/set using the <code>var additionalProperties: [String: JSON]</code> property of a <code><a href="Structs/Context.html">Context</a></code> model. The following example shows how to get and set a user-defined <code>pizza_size</code> variable:</p>
-<pre class="highlight swift"><code><span class="c1">// get the `pizza_size` context variable</span>
-<span class="n">assistant</span><span class="o">.</span><span class="nf">message</span><span class="p">(</span><span class="nv">workspaceID</span><span class="p">:</span> <span class="n">workspaceID</span><span class="p">,</span> <span class="nv">request</span><span class="p">:</span> <span class="n">request</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="n">failure</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">response</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="k">case</span> <span class="kd">let</span> <span class="o">.</span><span class="nf">string</span><span class="p">(</span><span class="n">size</span><span class="p">)</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">additionalProperties</span><span class="p">[</span><span class="s">"pizza_size"</span><span class="p">]</span><span class="o">!</span> <span class="p">{</span>
-        <span class="nf">print</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">// set the `pizza_size` context variable</span>
-<span class="n">assistant</span><span class="o">.</span><span class="nf">message</span><span class="p">(</span><span class="nv">workspaceID</span><span class="p">:</span> <span class="n">workspaceID</span><span class="p">,</span> <span class="nv">request</span><span class="p">:</span> <span class="n">request</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:</span> <span class="n">failure</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">response</span> <span class="k">in</span>
-    <span class="k">var</span> <span class="nv">context</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">context</span> <span class="c1">// `var` makes the context mutable</span>
-    <span class="n">context</span><span class="p">?</span><span class="o">.</span><span class="n">additionalProperties</span><span class="p">[</span><span class="s">"pizza_size"</span><span class="p">]</span> <span class="o">=</span> <span class="o">.</span><span class="nf">string</span><span class="p">(</span><span class="s">"large"</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre>
-
-<p>For reference, the <code><a href="Enums/JSON.html">JSON</a></code> type is defined as:</p>
-<pre class="highlight swift"><code><span class="c1">/// A JSON value (one of string, number, object, array, true, false, or null).</span>
-<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">JSON</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Codable</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="n">null</span>
-    <span class="k">case</span> <span class="nf">boolean</span><span class="p">(</span><span class="kt">Bool</span><span class="p">)</span>
-    <span class="k">case</span> <span class="nf">string</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span>
-    <span class="k">case</span> <span class="nf">int</span><span class="p">(</span><span class="kt">Int</span><span class="p">)</span>
-    <span class="k">case</span> <span class="nf">double</span><span class="p">(</span><span class="kt">Double</span><span class="p">)</span>
-    <span class="k">case</span> <span class="nf">array</span><span class="p">([</span><span class="kt">JSON</span><span class="p">])</span>
-    <span class="k">case</span> <span class="nf">object</span><span class="p">([</span><span class="kt">String</span><span class="p">:</span> <span class="kt">JSON</span><span class="p">])</span>
-<span class="p">}</span>
-</code></pre>
+<p>The IBM Watson Conversation service has been renamed to Assistant. Please use the <code>Assistant</code> class instead of <code><a href="Classes/Conversation.html">Conversation</a></code>. The <code><a href="Classes/Conversation.html">Conversation</a></code> class will be removed in a future release.</p>
 
 <p>The following links provide more information about the IBM Watson Assistant service:</p>
 
