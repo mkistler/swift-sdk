@@ -711,7 +711,7 @@
     },
     {
       "file": "/Users/mkistler/Projects/watson-swift/wdc-swift-sdk/Source/SpeechToTextV1/SpeechToText.swift",
-      "line": 107,
+      "line": 111,
       "symbol": "SpeechToText.accessToken(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -1274,6 +1274,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/mkistler/Projects/watson-swift/wdc-swift-sdk/Source/DiscoveryV1/Models/CreateEventResponse.swift",
+      "line": 28,
+      "symbol": "CreateEventResponse.ModelType.click",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/mkistler/Projects/watson-swift/wdc-swift-sdk/Source/DiscoveryV1/Models/CredentialDetails.swift",
       "line": 33,
       "symbol": "CredentialDetails.CredentialType.oauth2",
@@ -1561,6 +1568,69 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/mkistler/Projects/watson-swift/wdc-swift-sdk/Source/DiscoveryV1/Models/Environment.swift",
+      "line": 37,
+      "symbol": "Environment.Size.xs",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mkistler/Projects/watson-swift/wdc-swift-sdk/Source/DiscoveryV1/Models/Environment.swift",
+      "line": 38,
+      "symbol": "Environment.Size.s",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mkistler/Projects/watson-swift/wdc-swift-sdk/Source/DiscoveryV1/Models/Environment.swift",
+      "line": 39,
+      "symbol": "Environment.Size.ms",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mkistler/Projects/watson-swift/wdc-swift-sdk/Source/DiscoveryV1/Models/Environment.swift",
+      "line": 40,
+      "symbol": "Environment.Size.m",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mkistler/Projects/watson-swift/wdc-swift-sdk/Source/DiscoveryV1/Models/Environment.swift",
+      "line": 41,
+      "symbol": "Environment.Size.ml",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mkistler/Projects/watson-swift/wdc-swift-sdk/Source/DiscoveryV1/Models/Environment.swift",
+      "line": 42,
+      "symbol": "Environment.Size.l",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mkistler/Projects/watson-swift/wdc-swift-sdk/Source/DiscoveryV1/Models/Environment.swift",
+      "line": 43,
+      "symbol": "Environment.Size.xl",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mkistler/Projects/watson-swift/wdc-swift-sdk/Source/DiscoveryV1/Models/Environment.swift",
+      "line": 44,
+      "symbol": "Environment.Size.xxl",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mkistler/Projects/watson-swift/wdc-swift-sdk/Source/DiscoveryV1/Models/Environment.swift",
+      "line": 45,
+      "symbol": "Environment.Size.xxxl",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/mkistler/Projects/watson-swift/wdc-swift-sdk/Source/DiscoveryV1/Models/Field.swift",
       "line": 26,
       "symbol": "Field.FieldType.nested",
@@ -1739,6 +1809,83 @@
       "file": "/Users/mkistler/Projects/watson-swift/wdc-swift-sdk/Source/DiscoveryV1/Models/HtmlSettings.swift",
       "line": 34,
       "symbol": "HtmlSettings.excludeTagAttributes",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mkistler/Projects/watson-swift/wdc-swift-sdk/Source/DiscoveryV1/Models/LogQueryResponse.swift",
+      "line": 29,
+      "symbol": "LogQueryResponse.results",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mkistler/Projects/watson-swift/wdc-swift-sdk/Source/DiscoveryV1/Models/LogQueryResponseResult.swift",
+      "line": 31,
+      "symbol": "LogQueryResponseResult.DocumentType.query",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mkistler/Projects/watson-swift/wdc-swift-sdk/Source/DiscoveryV1/Models/LogQueryResponseResult.swift",
+      "line": 32,
+      "symbol": "LogQueryResponseResult.DocumentType.event",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mkistler/Projects/watson-swift/wdc-swift-sdk/Source/DiscoveryV1/Models/LogQueryResponseResult.swift",
+      "line": 41,
+      "symbol": "LogQueryResponseResult.EventType.click",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mkistler/Projects/watson-swift/wdc-swift-sdk/Source/DiscoveryV1/Models/LogQueryResponseResult.swift",
+      "line": 42,
+      "symbol": "LogQueryResponseResult.EventType.query",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mkistler/Projects/watson-swift/wdc-swift-sdk/Source/DiscoveryV1/Models/LogQueryResponseResult.swift",
+      "line": 49,
+      "symbol": "LogQueryResponseResult.ResultType.document",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mkistler/Projects/watson-swift/wdc-swift-sdk/Source/DiscoveryV1/Models/LogQueryResponseResultDocuments.swift",
+      "line": 25,
+      "symbol": "LogQueryResponseResultDocuments.results",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mkistler/Projects/watson-swift/wdc-swift-sdk/Source/DiscoveryV1/Models/MetricAggregation.swift",
+      "line": 34,
+      "symbol": "MetricAggregation.results",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mkistler/Projects/watson-swift/wdc-swift-sdk/Source/DiscoveryV1/Models/MetricResponse.swift",
+      "line": 24,
+      "symbol": "MetricResponse.aggregations",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mkistler/Projects/watson-swift/wdc-swift-sdk/Source/DiscoveryV1/Models/MetricTokenAggregation.swift",
+      "line": 29,
+      "symbol": "MetricTokenAggregation.results",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mkistler/Projects/watson-swift/wdc-swift-sdk/Source/DiscoveryV1/Models/MetricTokenResponse.swift",
+      "line": 24,
+      "symbol": "MetricTokenResponse.aggregations",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
